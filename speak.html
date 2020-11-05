@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         div {
+             margin: 10px 0px;
+         }
+
+         input {
+             padding: 15px 50px;
+             background-color: #000000d1;
+             color: lime;
+             font-style: italic;
+             outline: 2px solid lime;
+             border-radius: 6px;
+             font-size: 18px;
+             margin-left: 20px;
+         }
+
+         ::placeholder {
+             color: lime;
+             font-size: 18px;
+         }
+
+         h1 span {
+             color: red
+         }
+     </style>
+
+     <link rel="stylesheet" href="BTNgradien.css">
+ </head>
+
+ <body>
+
+
+     <h1> Use <span>javascript</span> make text to <span>speech</span> </h1>
+
+     <div> <input id="speechId" type="text" placeholder="text to speak....."> </div>
+
+
+     <div> <a href="#" onclick="textToaudioPlay()"> <span> Speak! </span> </a> </div>
+     <script>
+         function textToaudioPlay() {
+
+             var msg = document.getElementById("speechId").value;
+
+             var speech = new SpeechSynthesisUtterance();
+9
+             speech.lang ="bn-BD";
+             speech.text = msg;
+             speech.volume = 1;
+             speech.pitch = 1;
+             speech.rate = 1;
+
+             window.speechSynthesis.speak(speech);
+
+
+
+
+         }
+     </script>
+
+ </body>
+
+ </html>
